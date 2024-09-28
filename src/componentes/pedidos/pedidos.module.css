@@ -1,0 +1,36 @@
+.contenedorPrincipalPedidos {
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.listaPedidosForm {
+    list-style-type: none;
+    padding: 0;
+    line-height: 1;
+    margin: 0;
+    
+}
+
+.listaPedidos{
+background-color: rgba(26, 26, 26, 0.7);
+padding-top: 0px;
+
+border-bottom: 3px solid blue
+
+}
+
+
+
+.contenedorBotones{
+    display: flex;
+    flex-direction: row;
+}
+
+.pedido{
+    margin-bottom: 0;
+}
+
+.titulo2{
+    margin-bottom:10px;
+}

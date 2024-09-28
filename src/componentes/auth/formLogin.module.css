@@ -1,0 +1,147 @@
+
+
+.imagen {
+    width: 100%;
+    height: 100%;
+          /* La imagen estará inicialmente invisible */
+    animation: fadeIn 6s ease-in-out forwards;
+    /* Aplicamos la animación */
+    transition-duration: 1.5s;
+    
+} 
+.imagen:hover{
+     scale: 2;
+     
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        border-radius: 0%;
+    }
+
+    to {
+        opacity: 0.5;
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px 15px #ec731e;
+     
+    }
+       
+}
+
+/* ************************************************************************************* */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    width: 100%;
+    margin-top: 25px;
+
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+}
+
+.text {
+    height: auto;
+    margin: 5px;
+    line-height: 1;
+}
+
+.title1 {
+    margin: 0px;
+}
+
+.title2 {
+    margin: 0;
+}
+
+.title3 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.input {
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.label {
+    text-align: left;
+}
+
+.presentaErrorBackend {
+    margin: 0;
+    color:yellow;
+    font-size: medium;
+}
+
+/* ************************************************************************************ */
+/* From Uiverse.io by nikk7007 */
+.boton {
+    margin-top: 20px;
+    --color: #646cff;
+    padding: 0.8em 1.7em;
+    background-color: #1a1a1a;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 13px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.boton::before,
+.boton::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.boton::before {
+    top: -1em;
+    left: -1em;
+}
+
+.boton::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.boton:hover::before,
+.boton:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.boton:hover {
+    color: rgb(10, 25, 30);
+}
+
+.boton:active {
+    filter: brightness(.8);
+}

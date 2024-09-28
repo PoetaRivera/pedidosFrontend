@@ -1,0 +1,132 @@
+.contenedor {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.formulario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0;
+
+}
+
+.borde1 {
+    border-bottom: 3px solid blue
+}
+
+.borde2 {
+    border-bottom: 3px dotted wheat
+}
+
+.datos {
+    background-color: rgba(24, 24, 24, 0.7);
+    margin-top: 20px;
+}
+
+.productos {
+    /*   border-top: 3px dotted white; */
+    background-color: rgba(36, 36, 36, 0.7);
+    padding: 0.5rem;
+    margin-top: 0rem
+}
+
+.titulo {
+    background-color: rgba(22, 22, 22, 0.7);
+    margin: 0;
+}
+
+.label {
+    font-size: small;
+    ;
+    color: darkgrey;
+
+}
+
+p {
+    margin: 0;
+}
+
+.subtotal {
+    margin-bottom: 3px;
+}
+
+.input {
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.error {
+    margin: 0;
+    color: chartreuse;
+    font-size: x-small;
+}
+
+.presentaErrorBackend {
+    margin: 0;
+    color: yellow;
+    font-size: medium;
+}
+
+/* ************************************************************************************ */
+/* From Uiverse.io by nikk7007 */
+.boton {
+    --color: #646cff;
+    width: 100%;
+    padding: 0.8em 1.7em;
+    background-color: #1a1a1a;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 13px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.boton::before,
+.boton::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.boton::before {
+    top: -1em;
+    left: -1em;
+}
+
+.boton::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.boton:hover::before,
+.boton:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.boton:hover {
+    color: rgb(10, 25, 30);
+}
+
+.boton:active {
+    filter: brightness(.8);
+}

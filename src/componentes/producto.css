@@ -1,0 +1,52 @@
+.principal-producto {
+    display: flex;
+    flex-direction: row;
+    column-gap: 25px;
+    width: 100 vw;
+    border-bottom: 3px dotted white;
+   
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 20vw;
+    row-gap: 0px;
+   
+    padding: 0px;
+    margin: 0px;
+    
+    
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 65vw;
+    row-gap: 0px;
+   
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.enc {
+    text-align: right;
+}
+
+.pro {
+    text-align: left;
+}
+
+.input {
+    height: 20px;
+    width: 120px;
+}

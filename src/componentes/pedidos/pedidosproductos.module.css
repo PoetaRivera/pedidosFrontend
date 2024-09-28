@@ -1,0 +1,31 @@
+.pedidosDatos{
+    background-color: rgba(24, 24, 24, 0.7);
+   
+}
+
+.borde{
+border-bottom: 3px solid blue
+}
+
+.pedidosProductos {
+    border-bottom: 3px dotted white;
+    background-color:rgba(36, 36, 36, 0.7);
+    padding-top: 0px;
+}
+
+.tituloPedido{
+  background-color: rgba(22, 22, 22, 0.7)
+}
+
+.eltotal {
+    font-size: large;
+    color: red;
+}
+
+p {
+    margin: 0;
+}
+
+.subtotal {
+    margin-bottom: 3px;
+}

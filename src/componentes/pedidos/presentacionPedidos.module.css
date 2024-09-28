@@ -1,0 +1,44 @@
+.borde1 {
+    border-bottom: 3px solid blue
+}
+
+.borde2 {
+    border-bottom: 3px dotted wheat
+}
+
+.datos {
+    background-color: rgba(24, 24, 24, 0.7);
+    margin-top: 20px;
+}
+
+.productos {
+    /*   border-top: 3px dotted white; */
+    background-color: rgba(36, 36, 36, 0.7);
+    padding: 0.5rem;
+    margin-top: 0rem
+}
+
+.titulo {
+    background-color: rgba(22, 22, 22, 0.7);
+    margin: 0;
+}
+
+.label {
+    font-size: small;
+    ;
+    color: darkgrey;
+
+}
+
+p {
+    margin: 0;
+}
+
+.subtotal {
+    margin-bottom: 3px;
+}
+
+.eltotal {
+    font-size: large;
+    color: red;
+}

@@ -1,0 +1,74 @@
+
+
+.presentaErrorBackend {
+    margin: 0;
+    color: blue;
+    font-size: medium;
+}
+
+
+.error {
+    margin: 0;
+    color: chartreuse;
+    font-size: x-small;
+}
+
+
+/* From Uiverse.io by nikk7007 */
+.boton {
+    width: 44%;
+    margin:0px;
+    --color: #646cff;
+    padding: 0.8em 1.7em;
+    background-color: #1a1a1a;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 13px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.boton::before,
+.boton::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.boton::before {
+    top: -1em;
+    left: -1em;
+}
+
+.boton::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.boton:hover::before,
+.boton:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.boton:hover {
+    color: rgb(10, 25, 30);
+}
+
+.boton:active {
+    filter: brightness(.8);
+}
