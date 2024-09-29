@@ -1,6 +1,7 @@
 import axios from "axios";
 // export const API = "http://localhost:4000/api";
- export const API = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000/api";
+export const API =
+  import.meta.env.VITE_BACKEND_URL || "http://localhost:4000/api";
 
 axios.defaults.withCredentials = true;
 
@@ -8,11 +9,9 @@ axios.defaults.withCredentials = true;
 // Seccion Usuarios
 // ********************************************************************************************
 // Registra Usuario
-export const registerRequest = (user) =>
-  axios.post(`${API}/register`, user);
+export const registerRequest = (user) => axios.post(`${API}/register`, user);
 // Inicio de Sesion (Login)
-export const loginRequest = (user) =>
-  axios.post(`${API}/login`, user);
+export const loginRequest = (user) => axios.post(`${API}/login`, user);
 // Termina Sesion (Logout)
 export const logoutRequest = () => axios.post(`${API}/logout`);
 // Verifica usuario

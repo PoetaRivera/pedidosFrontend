@@ -48,6 +48,14 @@
     gap: 20px;
 }
 
+.contenedorBoton{
+display: flex;
+flex-direction: column;
+}
+
+.tituloBoton{
+    color: var(--A200);
+}
 
 .detalleCss {
     display: flex;

@@ -195,6 +195,7 @@ export function PaginaHacerPedidos() {
   };
 
   const {
+    contenedorBoton
     principal,
     botones,
     boton,
@@ -231,29 +232,41 @@ export function PaginaHacerPedidos() {
       </div>
 
       <div className={botones}>
-        <button
-          disabled={boton1}
-          className={boton1 ? inhabilitado : boton}
-          onClick={confirmarPedido}
-        >
-          1. Confirmar pedido
-        </button>
+        <div className={contenedorBoton}>
+          <p className={tituloBoton}>Paso 1</p>
+          <button
+            disabled={boton1}
+            className={boton1 ? inhabilitado : boton}
+            onClick={confirmarPedido}
+          >
+            Confirmar pedido
+          </button>
+        </div>
+
+        <div className={contenedorBoton}>
+           <p className={tituloBoton}>Paso 2</p>
         <button
           disabled={boton2}
           className={boton2 ? inhabilitado : boton}
           onClick={detallePedido}
         >
-          2. Ver detalle
+        Ver detalle
         </button>
+        </div>
+
+        <div className={contenedorBoton}>
+            <p className={tituloBoton}>Paso 3</p>
         <button
           disabled={boton3}
           className={boton3 ? inhabilitado : boton}
           onClick={guardarPedido}
         >
-          3. Enviar pedido
+         Enviar pedido
         </button>
+       </div>
+
         <button className={boton} onClick={reIniciar}>
-          Re-iniciar
+          reIniciar
         </button>
       </div>
       {msjAviso && <h4 className={aviso}>{mensaje1}</h4>}

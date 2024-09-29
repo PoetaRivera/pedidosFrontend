@@ -26,6 +26,36 @@
   --A200: #EEFF41;
   --A400: #C6FF00;
   --A700: #AEEA00;
+
+  --50M: #EDE7F6;
+  --100M: #D1C4E9;
+  --200M: #B39DDB;
+  --300M: #9575CD;
+  --400M: #7E57C2;
+  --500M: #673AB7;
+  --600M: #5E35B1;
+  --700M: #512DA8;
+  --800M: #4527A0;
+  --900M: #311B92;
+  --A100M: #B388FF;
+  --A200M: #7C4DFF;
+ --A400M: #651FFF;
+ --A700M: #6200EA;
+
+  --50A: #E8EAF6;
+    --100A: #C5CAE9;
+    --200A: #9FA8DA;
+    --300A: #7986CB;
+    --400A: #5C6BC0;
+    --500A: #3F51B5;
+    --600A: #3949AB;
+    --700A: #303F9F;
+    --800A: #283593;
+    --900A: #1A237E;
+    --A100A: #8C9EFF;
+    --A200A: #536DFE;
+    --A400A: #3D5AFE;
+    --A700A: #304FFE;
 }
 
 a {
@@ -35,7 +65,7 @@ a {
 }
 
 a:hover {
-  color: #535bf2;
+  color: var(--A200A);
 }
 
 body {
@@ -63,7 +93,7 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: var(--A700A);
 }
 
 button:focus,
@@ -78,7 +108,7 @@ button:focus-visible {
   }
 
   a:hover {
-    color: #747bff;
+    color: var(--A700A);
   }
 
   button {
