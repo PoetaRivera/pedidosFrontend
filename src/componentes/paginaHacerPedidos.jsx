@@ -195,7 +195,8 @@ export function PaginaHacerPedidos() {
   };
 
   const {
-    contenedorBoton
+    contenedorBoton,
+    tituloBoton,
     principal,
     botones,
     boton,
