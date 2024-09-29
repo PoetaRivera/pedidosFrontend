@@ -240,35 +240,39 @@ export function PaginaHacerPedidos() {
             className={boton1 ? inhabilitado : boton}
             onClick={confirmarPedido}
           >
-            Confirmar pedido
+            Confirmar
           </button>
         </div>
 
         <div className={contenedorBoton}>
-           <p className={tituloBoton}>Paso 2</p>
-        <button
-          disabled={boton2}
-          className={boton2 ? inhabilitado : boton}
-          onClick={detallePedido}
-        >
-        Ver detalle
-        </button>
+          <p className={tituloBoton}>Paso 2</p>
+          <button
+            disabled={boton2}
+            className={boton2 ? inhabilitado : boton}
+            onClick={detallePedido}
+          >
+            detalle
+          </button>
         </div>
 
         <div className={contenedorBoton}>
-            <p className={tituloBoton}>Paso 3</p>
-        <button
-          disabled={boton3}
-          className={boton3 ? inhabilitado : boton}
-          onClick={guardarPedido}
-        >
-         Enviar pedido
-        </button>
-       </div>
+          <p className={tituloBoton}>Paso 3</p>
+          <button
+            disabled={boton3}
+            className={boton3 ? inhabilitado : boton}
+            onClick={guardarPedido}
+          >
+            Enviar
+          </button>
+        </div>
 
-        <button className={boton} onClick={reIniciar}>
-          reIniciar
-        </button>
+        <div className={contenedorBoton}>
+          <p className={tituloBoton}></p>
+          <button className={boton} onClick={reIniciar}>
+            reIniciar
+          </button>
+        </div>
+        
       </div>
       {msjAviso && <h4 className={aviso}>{mensaje1}</h4>}
 
