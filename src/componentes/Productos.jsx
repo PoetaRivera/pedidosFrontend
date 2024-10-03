@@ -9,22 +9,23 @@ export function Productos({
   descripcionProducto,
   precioProducto,
   nombreProducto,
+  cantidad,
   misProductos,
   setMisProductos,
 }) {
   // tener presente que misProductos es una copia de productos que es lo que hay en la base de datos
-  // actualiza cantidad y hora de pedido, según el cliente lo cambie
+  // actualiza y agrega cantidad al producto en el cual ha habido un cambio en valor, según el cliente lo cambie
   function guardeCantidad(e) {
     const miCantidad = e.target.value;
     const miId = e.target.dataset.id;
-    const misProductosCopia = misProductos.map((ele) => {
-      if (ele.id === miId) {
+    const misProductosCopia = misProductos.map((producto) => {
+      if (producto.id === miId) {
         return {
-          ...ele,
+          ...producto,
           cantidad: miCantidad,
         };
       }
-      return ele;
+      return producto;
     });
     setMisProductos(misProductosCopia);
   }
@@ -54,13 +55,15 @@ export function Productos({
           type="number"
           min={"0"}
           onFocus={(e) => {
+            // desaparece el cero sin necesidad de borrarlo
             if (e.target.value === "0") e.target.value = "";
           }}
           onBlur={(e) => {
+            // recoloca el cero si queda vacio
             if (e.target.value === "") e.target.value = "0";
           }}
           placeholder="Ingrese cantidad"
-          defaultValue={"0"}
+          defaultValue={cantidad}
         ></input>
       </div>
     </div>
