@@ -53,8 +53,8 @@ width:100% ;
 }
 
 .tituloBoton{
-    color: var(--A200);
-font-size: x-large;
+color: var(--A200);
+font-size: small;
 margin-bottom: 15px;
 }
 
