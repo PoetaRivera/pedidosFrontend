@@ -144,51 +144,55 @@ export function PaginaHacerPedidos() {
     <div className={principal}>
       <div className={botones}>
         <div className={contenedorBoton}>
+          <p className={tituloBoton}>Paso 1🤔</p>
+
           <Tooltip arrow title={msjAyuda[0]} placement="top">
-            <p className={tituloBoton}>?👉Paso 1🤔</p>
+            <button
+              disabled={boton1}
+              className={boton1 ? inhabilitado : boton}
+              onClick={confirmarPedido}
+            >
+              Confirmar
+            </button>
           </Tooltip>
-          <button
-            disabled={boton1}
-            className={boton1 ? inhabilitado : boton}
-            onClick={confirmarPedido}
-          >
-            Confirmar
-          </button>
         </div>
 
         <div className={contenedorBoton}>
+          <p className={tituloBoton}>Paso 2🤔</p>
+
           <Tooltip arrow title={msjAyuda[1]} placement="top">
-            <p className={tituloBoton}>?👉Paso 2🤔</p>
+            <button
+              disabled={boton2}
+              className={boton2 ? inhabilitado : boton}
+              onClick={detallePedido}
+            >
+              detalle
+            </button>
           </Tooltip>
-          <button
-            disabled={boton2}
-            className={boton2 ? inhabilitado : boton}
-            onClick={detallePedido}
-          >
-            detalle
-          </button>
         </div>
 
         <div className={contenedorBoton}>
+          <p className={tituloBoton}>Paso 3🤔</p>
+
           <Tooltip arrow title={msjAyuda[2]} placement="top">
-            <p className={tituloBoton}>?👉Paso 3🤔</p>
+            <button
+              disabled={boton3}
+              className={boton3 ? inhabilitado : boton}
+              onClick={guardarPedido}
+            >
+              Enviar
+            </button>
           </Tooltip>
-          <button
-            disabled={boton3}
-            className={boton3 ? inhabilitado : boton}
-            onClick={guardarPedido}
-          >
-            Enviar
-          </button>
         </div>
 
         <div className={contenedorBoton}>
+          <p className={tituloBoton}>?👉Reiniciar🤔</p>
+
           <Tooltip arrow title={msjAyuda[3]} placement="top">
-            <p className={tituloBoton}>?👉Reiniciar🤔</p>
+            <button className={boton} onClick={reIniciar}>
+              reIniciar
+            </button>
           </Tooltip>
-          <button className={boton} onClick={reIniciar}>
-            reIniciar
-          </button>
         </div>
       </div>
       {msjAviso && <h4 className={aviso}>{mensaje1}</h4>}
