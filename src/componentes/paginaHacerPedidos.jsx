@@ -145,7 +145,7 @@ export function PaginaHacerPedidos() {
       <div className={botones}>
         <div className={contenedorBoton}>
           <Tooltip arrow title={msjAyuda[0]} placement="top">
-            <p className={tituloBoton}>Paso 1🤔</p>
+            <p className={tituloBoton}>?👉Paso 1🤔</p>
           </Tooltip>
           <button
             disabled={boton1}
@@ -158,7 +158,7 @@ export function PaginaHacerPedidos() {
 
         <div className={contenedorBoton}>
           <Tooltip arrow title={msjAyuda[1]} placement="top">
-            <p className={tituloBoton}>Paso 2🤔</p>
+            <p className={tituloBoton}>?👉Paso 2🤔</p>
           </Tooltip>
           <button
             disabled={boton2}
@@ -171,7 +171,7 @@ export function PaginaHacerPedidos() {
 
         <div className={contenedorBoton}>
           <Tooltip arrow title={msjAyuda[2]} placement="top">
-            <p className={tituloBoton}>Paso 3🤔</p>
+            <p className={tituloBoton}>?👉Paso 3🤔</p>
           </Tooltip>
           <button
             disabled={boton3}
@@ -184,7 +184,7 @@ export function PaginaHacerPedidos() {
 
         <div className={contenedorBoton}>
           <Tooltip arrow title={msjAyuda[3]} placement="top">
-            <p className={tituloBoton}>Reiniciar🤔</p>
+            <p className={tituloBoton}>?👉Reiniciar🤔</p>
           </Tooltip>
           <button className={boton} onClick={reIniciar}>
             reIniciar
