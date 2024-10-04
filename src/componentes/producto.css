@@ -4,7 +4,7 @@
     column-gap: 25px;
     width: 100 vw;
     border-bottom: 3px dotted white;
-   
+   margin-bottom: 10px;
 }
 
 .encabezado {
@@ -13,7 +13,7 @@
     justify-content: flex-end;
     width: 20vw;
     row-gap: 0px;
-   
+    color: var(--A200A);
     padding: 0px;
     margin: 0px;
     

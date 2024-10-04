@@ -35,7 +35,9 @@ export function Productos({
   return (
     <div className="principal-producto">
       <div className="encabezado">
-        <span className="col enc">id:</span>
+        <span style={{ display: "none" }} className="col enc">
+          id:
+        </span>
         <span className="col enc">Descripción:</span>
         <span className="col enc">Precio:</span>
         <span className="col enc">Nombre:</span>
@@ -43,7 +45,9 @@ export function Productos({
       </div>
 
       <div className="producto">
-        <span className="col pro">{idProducto}</span>
+        <span style={{ display: "none" }} className="col pro">
+          {idProducto}
+        </span>
         <span className="col pro">{descripcionProducto}</span>
         <span className="col pro">{precioProducto}</span>
         <span className="col pro">{nombreProducto}</span>
