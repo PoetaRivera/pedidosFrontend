@@ -2,7 +2,6 @@
 import styles from "./formLogin.module.css";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../componenteContexto";
-import { useEffect, useState } from "react";
 import { Logout } from "./logout";
 import imagen1 from "../../imagenes/imagen1.png";
 
@@ -16,15 +15,12 @@ export function FormLogin() {
   const {
     register,
     handleSubmit,
-  //  formState: { errors },
     reset,
   } = useForm();
-  const [nombre, setNombre] = useState("");
+ 
   const { signin, user, errors: loginErrors } = useAuth();
 
-  useEffect(() => {
-    user ? setNombre(user.alias) : setNombre("");
-  }, [user]);
+ 
 
   //funcion que login un cliente
   const onSubmit = handleSubmit(async (data) => {
@@ -48,6 +44,7 @@ export function FormLogin() {
   //----------------------------------------------------------------------------------------------------
   return (
     <div className={contenedor}>
+      {/* Mostrar errores del backend si existen */}
       {loginErrors.length > 0 && (
         <div className={presentaErrorBackend}>{loginErrors.join(", ")}</div>
       )}
@@ -57,7 +54,7 @@ export function FormLogin() {
           <h3 className={title1}>Inicia sesión</h3>
           <h4 className={title2}>
             <span style={{ color: "blue", fontSize: "25px" }}>☺️ </span>
-            {`Bienvenido ${nombre}`}
+            {`Bienvenido ${user?.alias}`}
             <span style={{ color: "blue", fontSize: "25px" }}> ☺️</span>
           </h4>
           <h5 className={title3}>Debes iniciar sesión para hacer un pedido</h5>
@@ -96,8 +93,6 @@ export function FormLogin() {
         <h2>Imagen de la semana</h2>
         <img src={imagen1} alt="pupusa" className={imagen}></img>
       </div>
-
-     
     </div>
   );
 }

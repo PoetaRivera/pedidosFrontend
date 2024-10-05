@@ -1,7 +1,6 @@
 import styles from "./formRegistrar.module.css";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../componenteContexto";
-import { useState } from "react";
 
 //-------------------------------------------------------------------------------------------
 //Formulario para registrar clientes
@@ -24,22 +23,25 @@ export function FormRegistrar() {
     },
   });
 
-  const { signup, errors: registerErrors } = useAuth();
-  const [mensaje, setMensaje] = useState("")  
-  
+  const { signup, errors: registerErrors, setErrors } = useAuth();
+
   //funcion que registra usuario
   const onSubmit = handleSubmit(async (datos) => {
-    
     try {
       await signup(datos);
       reset();
-       //setMensaje("Usuario registrado con exito");
+      //setMensaje("Usuario registrado con exito");
     } catch (error) {
-      console.error("Error al editar el usuario:", error); // Manejo de errores
-     // setMensaje("Hubo un error al registrar el usuario"); // Mensaje de error
+      setErrors([error.response.data]);
     }
-    
   });
+
+  // Función para mostrar errores de validacion del formulario
+  const renderError = (fieldName) => {
+    return errors[fieldName] ? (
+      <p className={error}>⛔ {errors[fieldName].message} ⛔</p>
+    ) : null;
+  };
 
   const {
     formulario,
@@ -79,7 +81,7 @@ export function FormRegistrar() {
             maxLength: { value: 30, message: "Máximo 20 caracteres" },
           })}
         />
-        {errors.alias && <p className={error}>⛔{errors.alias.message}⛔</p>}
+        {renderError("alias")}
 
         <label className={label} htmlFor="movil">
           Movil:
@@ -95,7 +97,7 @@ export function FormRegistrar() {
             pattern: { value: /^\d{8}$/, message: "Deben ser 8 digitos" },
           })}
         />
-        {errors.movil && <p className={error}>⛔{errors.movil.message}⛔</p>}
+        {renderError("movil")}
 
         <label className={label} htmlFor="clave">
           Clave:
@@ -115,7 +117,7 @@ export function FormRegistrar() {
             maxLength: { value: 25, message: "Máximo 25 caracteres" },
           })}
         />
-        {errors.clave && <p className={error}>⛔{errors.clave.message}⛔</p>}
+        {renderError("clave")}
 
         <label className={label} htmlFor="Confirmar-clave">
           Confirmar clave:
@@ -135,9 +137,7 @@ export function FormRegistrar() {
             },
           })}
         />
-        {errors.confirmarClave && (
-          <p className={error}>⛔{errors.confirmarClave.message} ⛔</p>
-        )}
+        {renderError("confirmarClave")}
 
         <label className={label} htmlFor="rol">
           Rol:
@@ -145,7 +145,6 @@ export function FormRegistrar() {
         <select
           className={select}
           name="rol"
-          type="text"
           {...register("rol", { require: true })}
         >
           <option className={rol} value="usuario">
@@ -160,7 +159,6 @@ export function FormRegistrar() {
           Registrar
         </button>
       </form>
-      
     </div>
   );
 }

@@ -1,21 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./headerNav.module.css";
 import { useAuth } from "../componenteContexto";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+
+
 //---------------------------------------------------------------------------------
 export function HeaderNav() {
   const { user } = useAuth();
-  const [miRol, setMiRol] = useState("");
-  const location = useLocation();
-  const ruta = location.pathname; // url actual
-
-  useEffect(() => {
-    user && setMiRol(user.rol);
-  }, [user]);
+  const { pathname } = useLocation(); // url actual
+  
 
   const renderLink = (path, text) =>
-    ruta !== path && (
+    pathname !== path && (
       <Link className={link} to={path}>
         {text}
       </Link>
@@ -27,7 +22,7 @@ export function HeaderNav() {
       <p className={title1}>Navega a...</p>
       <div className={header}>
         {renderLink("/", "Login")}
-        {user && miRol === "admin" && renderLink("/admin", "Admin")}
+        {user?.rol === "admin" && renderLink("/admin", "Admin")}
         {user && renderLink("/hacerpedido", "Pedir")}
       </div>
     </div>

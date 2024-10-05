@@ -12,7 +12,7 @@ import { useAuth } from "../../componenteContexto";
 
 
 export const PedidosAliasFecha = () => {
-  const { errors: registerErrors } = useAuth();
+  const { errors: registerErrors, setErrors } = useAuth();
   const {
     register,
     handleSubmit,
@@ -27,7 +27,7 @@ export const PedidosAliasFecha = () => {
   });
 
   const [pedidos, setPedidos] = useState([]);
-  const { setErrors } = useAuth();
+ 
   // *******************************************************************************************
   const onSubmit = handleSubmit(async (datos) => {
     const { alias, fecha } = datos;
