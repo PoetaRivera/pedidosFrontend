@@ -54,7 +54,7 @@ export function FormLogin() {
           <h3 className={title1}>Inicia sesión</h3>
           <h4 className={title2}>
             <span style={{ color: "blue", fontSize: "25px" }}>☺️ </span>
-            {`Bienvenido ${user?.alias}`}
+            {`Bienvenido ${user?.alias || ""}`}
             <span style={{ color: "blue", fontSize: "25px" }}> ☺️</span>
           </h4>
           <h5 className={title3}>Debes iniciar sesión para hacer un pedido</h5>

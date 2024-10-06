@@ -1,63 +1,46 @@
 import { useState, useEffect } from "react";
 import { pedirPedidosProductosRequest } from "../../api/auth.js";
-import styles from "./pedidosproductos.module.css";
 import { useAuth } from "../../componenteContexto";
+import { PresentacionPedidos } from "./presentacionPedidos.jsx";
+// **********************************************************************************************
 // Solicita y presenta todos los pedidos incluyendo los productos
 export const PedidosProductos = () => {
   const [pedidos, setPedidos] = useState([]);
-  const { setErrors } = useAuth();
+  const { setErrors, CircularIndeterminate } = useAuth();
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     // Solicita todos los pedidos al backend
     const fetchPedidos = async () => {
+      setLoading(true); // Establecer loading a true antes de hacer la solicitud
       try {
         const res = await pedirPedidosProductosRequest();
-        setPedidos(res.data);
+        // Asegura que res.data tenga el formato esperado antes de asignar a pedidos
+        if (res?.data && Array.isArray(res.data)) {
+          setPedidos(res.data);
+        } else {
+          setErrors("Los datos recibidos no son válidos");
+        }
       } catch (error) {
-        return setErrors(error.response.data);
+        // Si error.response no está definido, usar un mensaje por defecto
+        const errorMessage = error.response?.data || "Error al obtener pedidos";
+        setErrors(errorMessage);
+      } finally {
+        setLoading(false); // Establecer loading a false una vez que se complete la solicitud
       }
     };
     fetchPedidos();
-  }, []);
-
-  const {
-    pedidosDatos,
-    tituloPedido,
-    pedidosProductos,
-    subtotal,
-    eltotal,
-    borde,
-  } = styles;
+  }, [setErrors]);
 
   return (
-    <div>
-      {pedidos.map((pedido, index) => {
-        // Calcula el total de cada pedido
-        const total = pedido.productos.reduce(
-          (acc, producto) => acc + producto.subtotal,
-          0
-        );
-
-        return (
-          <div className={pedidosDatos} key={pedido.id}>
-            <h3 className={tituloPedido}>Pedido {index + 1}</h3>
-            <p>Id: {pedido.id}</p>
-            <p>Alias: {pedido.alias}</p>
-            <p>Fecha: {pedido.fechaPedido}</p>
-            <p className={borde}>Hora: {pedido.horaPedido}</p>
-
-            {pedido.productos.map((producto, idx) => (
-              <div className={pedidosProductos} key={idx}>
-                <p>Nombre: {producto.nombre}</p>
-                <p>Precio: {producto.precio}</p>
-                <p>Cantidad: {producto.cantidad}</p>
-                <p className={subtotal}>Subtotal: {producto.subtotal}</p>
-              </div>
-            ))}
-
-            <h3 className={eltotal}>Total: {total}</h3>
-          </div>
-        );
-      })}
+    <div  className="contenedor">
+      {loading ? (
+        <CircularIndeterminate /> // Muestra el loader mientras loading es true
+      ) : pedidos.length > 0 ? (
+        <PresentacionPedidos pedidos={pedidos} />
+      ) : (
+        <p>No hay pedidos disponibles.</p>
+      )}
     </div>
   );
 };

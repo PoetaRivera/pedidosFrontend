@@ -2,7 +2,8 @@
 // eslint-disable-next-line react/prop-types
 import { useState, useContext, createContext, useEffect } from "react";
 import { registerRequest, loginRequest, logoutRequest } from "./api/auth";
-
+import CircularProgress from "@mui/material/CircularProgress";
+import Stack from "@mui/material/Stack";
 export const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -63,7 +64,21 @@ export const AuthProvider = ({ children }) => {
     }
   };
   // ---------------------------------------------------------------------------------------------------
-
+ // componente de espera
+function CircularIndeterminate() {
+  return (
+    <Stack
+      sx={{ color: "grey.500", justifyContent: "center", marginTop:"20px" }}
+      spacing={2}
+      direction="row"
+    >
+      <CircularProgress color="secondary" />
+      <CircularProgress color="success" />
+      <CircularProgress color="inherit" />
+    </Stack>
+  );
+}
+// ----------------------------------------------------------------------------------------------
   useEffect(() => {
     if (errors.length > 0) {
       const timer = setTimeout(() => {
@@ -84,6 +99,7 @@ export const AuthProvider = ({ children }) => {
         isAuthen,
         errors,
         setErrors,
+        CircularIndeterminate,
       }}
     >
       {children}
