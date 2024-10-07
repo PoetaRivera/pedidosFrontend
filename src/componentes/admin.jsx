@@ -31,7 +31,7 @@ export const Admin = () => {
           <h2 className={title1}>Productos</h2>
           {renderLink(
             "/productos",
-            " Ver todos los Productos/Borrar o editar un producto."
+            " Ver Productos/Borrar o editar."
           )}
           {renderLink("/agregarproducto", " Agregar un Producto")}
         </div>
@@ -41,7 +41,7 @@ export const Admin = () => {
 
           {renderLink(
             "/pedirusuarios",
-            " Ver todos los usuarios/Borrar o editar un usuario"
+            " Ver usuarios/Borrar o editar"
           )}
           {renderLink("/registrarusuarios", "Registrar Usuarios.")}
         </div>
